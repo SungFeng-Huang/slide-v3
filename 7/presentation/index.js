@@ -38,6 +38,7 @@ require('spectacle/lib/themes/default/index.css');
 
 const images = {
   bootstrap: require('../assets/bootstrap.png'), // eslint-disable-line global-require
+  promise: require('../assets/promise.png'), // eslint-disable-line global-require
 };
 
 preloader(images);
@@ -456,6 +457,230 @@ export default class Presentation extends React.Component {
           { /* =================================
             Promise
             ================================= */ }
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise
+            </Heading>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              先來感受一下差異
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/callback-hell.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              when using promise
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/promise.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              學習路徑
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  callback
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Promise
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  async, await
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise 好好學，寫 js 沒煩惱
+            </Heading>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise 規範
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">ES6 Promise.js 標準</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="https://promisesaplus.com/" target="_blank">Promise A+: 只提供最簡化的 .then</Link>
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise 是什麼？
+            </Heading>
+            <Image src={images.promise.replace('/', '')} style={{ width: '80%' }} />
+            <Text textColor="primary">
+              pending、fulfilled、rejected
+            </Text>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise 怎麼用？
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/create-promise.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise 狀態轉移
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/promise-status-transform.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise 狀態處理
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  讓 .then() 接受兩個 function
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  .then() .catch() 並行
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise.then()
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/promise-with-then.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise.then().catch()
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/promise-with-then-catch.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Promise 好處
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  goodbye callback hell
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  chaining
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  成功失敗後狀態不能再被轉換
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  可以使用 async await
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              More Promise
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  promise.all
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  promise.race
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank">Promise.all()</Link>
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/promise-all.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race" target="_blank">Promise.race()</Link>
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/promise-race.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Reference
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="http://bevacqua.github.io/promisees/#" target="_blank">Promise playground</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="http://caniuse.com/#search=Promise" target="_blank">Can I use Promise</Link>
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
           { /* =================================
             fetch
             ================================= */ }
