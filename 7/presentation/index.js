@@ -39,6 +39,8 @@ require('spectacle/lib/themes/default/index.css');
 const images = {
   bootstrap: require('../assets/bootstrap.png'), // eslint-disable-line global-require
   promise: require('../assets/promise.png'), // eslint-disable-line global-require
+  jsonTrend: require('../assets/jsonTrend.png'), // eslint-disable-line global-require
+  fetch: require('../assets/fetch.png'), // eslint-disable-line global-require
 };
 
 preloader(images);
@@ -684,6 +686,304 @@ export default class Presentation extends React.Component {
           { /* =================================
             fetch
             ================================= */ }
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Fetch
+            </Heading>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              講 Fetch 前需提到 AJAX
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  AJAX (Asynchronous JavaScript and XML)
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  並非由瀏覽器自動進行 http request
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  是由 JS code 所觸發的行為
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              現在是 2016 年了，JSON 是主流
+            </Heading>
+            <Image src={images.jsonTrend.replace('/', '')} style={{ width: '100%' }} />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              幾個 JSON 的注意事項
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  空字串 ('') 不是 JSON
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  空字串內要有東西才是 ({'\'""\''}, {'\'{}\''}, {'\'null\''}, {'\'[]\''})
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  JSON.stringify 將 JSON 轉字串
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  JSON.parse 將 JSON 字串轉物件
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              以前是這樣寫 ajax
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/jquery-ajax.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              今年是幾年我就不說第二次了
+            </Heading>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              XMLHttpRequest
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  在 IE7 (2006) 年就有的 API
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  命名有些問題
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  API 太過低階
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  不打算教這個
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              目前幾個不錯的 API
+            </Heading>
+            可以 run 在 browser、node、react native (ios, android)
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">fetch</Link> (會教這個）
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="https://github.com/visionmedia/superagent" target="_blank">superagent</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="https://github.com/mzabriskie/axios" target="_blank">axios</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  <Link href="https://github.com/sindresorhus/got" target="_blank">got</Link>
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              fetch
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  WHATWG
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                   Web Hypertext Application Technology Working Group
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                   上述組織所訂定的標準
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              fetch 現代瀏覽器支援度
+            </Heading>
+            <Image src={images.fetch.replace('/', '')} style={{ width: '100%' }} />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              fetch 在各環境用法
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  瀏覽器原生 - <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">window.fetch</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  fetch polyfill - <Link href="https://github.com/github/fetch" target="_blank">whatwg-fetch</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  on node - <Link href="https://github.com/bitinn/node-fetch" target="_blank">node-fetch</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  結合 browser & node - <Link href="https://github.com/matthew-andrews/isomorphic-fetch" target="_blank">isomorphic-fetch</Link>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  React Native - <Link href="https://facebook.github.io/react-native/docs/network.html#fetch" target="_blank">內建支援 API</Link>
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              注意環境需要有 Promise
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/promise-env.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              fetch 使用
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/fetch-then.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              拿回的 <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">response</Link> 物件用法
+            </Heading>
+            response.text() response.json() 都是回傳 promise
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/fetch-response.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              拿回的 <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Response" target="_blank">response</Link> 物件用法
+            </Heading>
+            response.text() response.json() 都是回傳 promise
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/fetch-res-json.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              利用 fetch 送 POST
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/fetch-post.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              第二個參數是一個 options 物件
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  method: 可以是 get(default), post, put, delete
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  headers: HTTP request header
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  body: JSON.stringify 轉成 JSON 字串
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              <Link href="https://github.com/github/fetch#caveats" target="_blank">Caveats</Link>
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  status 4xx, 5xx 不會被 reject (jQuery.ajax() 會 fail)
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  預設不會傳 cookie 到 server
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              自己 check http status
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/fetch-check-status.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
         </Deck>
       </Spectacle>
     );
