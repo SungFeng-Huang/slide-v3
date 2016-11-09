@@ -105,11 +105,6 @@ export default class Presentation extends React.Component {
           { /* =================================
             UI framework
             ================================= */ }
-          <BgSlide>
-            <Heading size={1} lineHeight={2} textColor="white">
-              UI framework
-            </Heading>
-          </BgSlide>
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
               UI framework
