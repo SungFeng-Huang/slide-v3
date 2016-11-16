@@ -54,17 +54,13 @@
 - Lifecycle hook
 - with css, styles together (inline-style, className)
 
-## W7: Advanced Front-end (11/09)
+## W7: More on React: Advanced Front-end (11/09)
 - UI framework
-- React Router
-- Advanced webpack config (production build)
-
-## W8: API (11/09)
 - Promise
 - Fetch
 - API Design
 
-## W9: Testing (11/16)
+## W8: Testing (11/16)
 - TDD
 - Coverage
 - CI
@@ -72,34 +68,34 @@
 - GitFlow, GithubFlow
 - 專案管理 (SEMVER, alpha, beta, rc)
 
-## W10: In-class Hackathon (11/23)
+## W9: In-class Hackathon (11/23)
 Individual，題目自訂，須依照一些前面教過的基本架構
 
-## W11: Database + MS Azure (11/30)
+## W10: Database + MS Azure (11/30)
 - ACID
 - CAP
 - RDBMS
 - SQL
 
-## W12: Backend framework (12/07)
+## W11: Backend framework (12/07)
 - Express Blog
 - Routing (RESTful)
 - MVC
 
-## W13: Other Backend Good stuff (12/14)
+## W12: Other Backend Good stuff (12/14)
 - Generator
 - Migration
 - Model
 - Association
 
-## W14: Redux (12/21)
+## W13: Redux (12/21)
 - Action
 - Store
 - Reducer
 - Middleware
 - react-redux
 
-## W15: Deploy (12/28)
+## W14: Deploy (12/28)
 - Nginx
 - PM2
 - tmux

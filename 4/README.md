@@ -1,3 +1,3 @@
-# Week 3
+# Week 4
 
-Slides for Web Seminar 3nd week ---- Node.js, express.js, npm script, basic git.
+Slides for Web Seminar 4th week ---- ES6, babel, React JSX.

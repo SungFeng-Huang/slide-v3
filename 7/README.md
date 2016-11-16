@@ -1,3 +1,3 @@
-# Week 3
+# Week 7
 
-Slides for Web Seminar 3nd week ---- Node.js, express.js, npm script, basic git.
+Slides for Web Seminar 7th week ---- Bootstrap, Restful, Promise, fetch.

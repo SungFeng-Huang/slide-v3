@@ -1,0 +1,20 @@
+import request from 'supertest-as-promised';
+import express from 'express';
+
+const app = express();
+
+app.get('/user', (req, res) => {
+  res.json({ name: 'tobi' });
+});
+
+
+it('works', () => {
+  return request(app)
+    .get('/user')
+    .expect('Content-Type', /json/)
+    .expect('Content-Length', '15')
+    .expect(200)
+    .end((err, res) => {
+      if (err) throw err;
+    });
+})

@@ -1,3 +1,3 @@
-# Week 2
+# Week 6
 
-Slides for Web Seminar 2nd week ---- JS good parts, bad parts and ESLint.
+Slides for Web Seminar 6th week ---- More on React.
