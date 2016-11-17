@@ -264,7 +264,7 @@ export default class Presentation extends React.Component {
               驗收測試 Acceptance Testing
             </Heading>
             <Text textColor="white" lineHeight={2}>
-              是否能針對 uesr story 正常運作功能<br />
+              是否能針對 user story 正常運作功能<br />
               應該用使用者能懂的方式撰寫驗收測試<br />
               使用真實的系統做測試
             </Text>
@@ -577,7 +577,7 @@ export default class Presentation extends React.Component {
             </Heading>
             <CodePane
               lang="js"
-              source={require("raw!../assets/codes/install.example")}
+              source={require("raw!../assets/codes/exec.example")}
               margin="0 20px 0"
               textSize="0.6em"
             />
@@ -634,8 +634,17 @@ export default class Presentation extends React.Component {
             />
           </BgSlide>
           <BgSlide transition={['slide']}>
-            <Heading size={5} lineHeight={2} textColor="white">
+            <Heading size={4} lineHeight={2} textColor="white">
               使用 ES2016 的 async await
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/async-install.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+            <Heading size={6} lineHeight={2} textColor="white">
+              安裝完後就可以使用了
             </Heading>
             <CodePane
               lang="js"
@@ -644,6 +653,7 @@ export default class Presentation extends React.Component {
               textSize="0.6em"
             />
           </BgSlide>
+
           { /* =================================
             Test Express App
             ================================= */ }

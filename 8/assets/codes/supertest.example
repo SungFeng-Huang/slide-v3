@@ -8,13 +8,13 @@ app.get('/user', (req, res) => {
 });
 
 
-it('works', () => {
-  return request(app)
-    .get('/user')
-    .expect('Content-Type', /json/)
-    .expect('Content-Length', '15')
-    .expect(200)
-    .end((err, res) => {
-      if (err) throw err;
-    });
+it('works', async () => {
+  const response = await request(app)
+    .get('/user');
+
+  // application/json; charset=utf-8
+  expect(response.header['content-type']).toMatch(/json/);
+  expect(response.status).toBe(200);
+
+  expect(response.body).toEqual({ name: 'tobi' });
 })
