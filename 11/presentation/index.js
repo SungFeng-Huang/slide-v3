@@ -352,6 +352,19 @@ export default class Presentation extends React.Component {
               textSize="0.6em"
             />
           </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Reference
+            </Heading>
+            <List>
+              <ListItem>
+                <Link href="http://calvert.logdown.com/posts/159792-sql-to-mongodb-mapping-chart" target="_blank">SQL to mongoDB naming</Link>
+              </ListItem>
+              <ListItem>
+                <Link href="http://andyyou.logdown.com/posts/177570-mongodb-notes" target="_blank">MongoDB 快速入門筆記</Link>
+              </ListItem>
+            </List>
+          </BgSlide>
         </Deck>
       </Spectacle>
     );
