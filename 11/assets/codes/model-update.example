@@ -2,7 +2,7 @@
 Model.update();
 
 // update a single document & return to application
-Model.finOneAndUpdate();
+Model.findOneAndUpdate();
 
 // document base update
 Model.findById(id, (err, doc) => {

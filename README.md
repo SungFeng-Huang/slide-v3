@@ -83,10 +83,11 @@ Individual，題目自訂，須依照一些前面教過的基本架構
 - MVC
 
 ## W12: Other Backend Good stuff (12/14)
-- Generator
+- SQL
 - Migration
 - Model
 - Association
+- Auth
 
 ## W13: Redux (12/21)
 - Action
