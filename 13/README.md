@@ -1,3 +1,3 @@
-# Week 7
+# Week 4
 
-Slides for Web Seminar 7th week ---- Bootstrap, Restful, Promise, fetch.
+Slides for Web Seminar 4th week ---- ES6, babel, React JSX.

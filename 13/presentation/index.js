@@ -37,21 +37,12 @@ require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 
 const images = {
-  // eslint-disable global-require
-  cap: require('../assets/cap.png'),
-  otherCap: require('../assets/other-cap.png'),
-  circle: require('../assets/circle.jpg'),
-  database: require('../assets/database.png'),
-  databaseSupport: require('../assets/DatabaseSupport.jpg'),
-  manyToMany: require('../assets/many-to-many.png'),
-  oneToMany: require('../assets/one-to-many.png'),
-  map: require('../assets/map.png'),
-  nosqlType: require('../assets/nosql-type.jpg'),
-  nosqlMap: require('../assets/nosql-map.jpg'),
-  sqls: require('../assets/sqls.png'),
-  table: require('../assets/table.jpg'),
-  mom: require('../assets/mom.png'),
-  // eslint-enable global-require
+  caniuse: require('../assets/caniuse.png'), // eslint-disable-line global-require
+  comptable: require('../assets/comp-table.png'), // eslint-disable-line global-require
+  socket: require('../assets/socket.png'), // eslint-disable-line global-require
+  babel: require('../assets/babel.png'), // eslint-disable-line global-require
+  babelIs: require('../assets/babel-is.png'), // eslint-disable-line global-require
+  react: require('../assets/react.png'), // eslint-disable-line global-require
 };
 
 preloader(images);
@@ -77,15 +68,12 @@ export default class Presentation extends React.Component {
               Web Programming Seminar
             </Heading>
             <Heading size={5} fix textColor="white">
-              Week 12
+              Week 13: Redux
             </Heading>
-            <Text textSize="1.5em" lineHeight={1.3} margin="60px 0px 0px" bold textColor="white">
-              More Database / Auth
+            <Text textSize="1.5em" lineHeight={1.3} margin="120px 0px 0px" bold textColor="white">
+
             </Text>
           </BgSlide>
-          { /* =================================
-            Outline
-            ================================= */ }
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
               Outline
@@ -93,494 +81,863 @@ export default class Presentation extends React.Component {
             <List>
               <ListItem>
                 <Text textColor="primary">
-                  Database
+                  Principles
                 </Text>
               </ListItem>
               <ListItem>
                 <Text textColor="primary">
-                  SQL
+                  Store / Reducer / Action
                 </Text>
               </ListItem>
               <ListItem>
                 <Text textColor="primary">
-                  Sequelize
+                  with React
                 </Text>
               </ListItem>
               <ListItem>
                 <Text textColor="primary">
-                  Auth
+                  Async Action
                 </Text>
               </ListItem>
             </List>
           </BgSlide>
-          { /* =================================
-            Database
-            ================================= */ }
+
+          {/* Principles */}
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
-              Database
+              Principles
             </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  Single Source of True
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Read-Only State
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Pure Functional State Change
+                </Text>
+              </ListItem>
+            </List>
           </BgSlide>
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
-              DBMS
+            軟體首要技術使命是管理複雜度。– Steve McConnell in <a href="http://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read">Code Complete</a>
             </Heading>
-            <Text textColor="primary">
-              Database Manage System
-            </Text>
-            <Image src={images.database.replace('/', '')} style={{ width: '50%' }} />
           </BgSlide>
           <BgSlide transition={['slide']}>
-            <Heading size={3} lineHeight={2} textColor="white">
-              Database 的發展已經有超過 50 年以上
+            <Heading size={4} lineHeight={1} textColor="white">
+              Arrow function
             </Heading>
-            <Text textColor="primary">
-              比較詳細的可以看
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/arrow-function.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Class
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/class-1.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/class-2.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Destructuring
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/destructuring.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Default
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/default.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Rest
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/rest.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Spread
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/spread.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Const
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/const.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Let
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/let.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={1} textColor="white">
+              要用舊的語法做出相同的功能可以參考
+            </Heading>
+            <Link href="https://github.com/addyosmani/es6-equivalents-in-es5">
+              ECMAScript 6 equivalents in ES5
+            </Link>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              One more thing..
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              Object Rest Spread!
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              A stage 3 proposal in<br />
               <Link
-                href="https://speakerdeck.com/yunglin/nosql-da-chang-hua"
+                href="https://github.com/tc39/ecma262"
                 target="_blank"
               >
-                NoSQL 大腸花
+                tc39/ecma262
               </Link>
-            </Text>
+            </Heading>
           </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Object Rest
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/object-rest.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Object Spread
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/object-spread.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
-              經典款：RDBMS
+              有了這些語法..但是..
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              瀏覽器支援度
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              之前推薦過的用來查瀏覽器支援度的
+              <Link
+                href="http://caniuse.com/"
+                target="_blank"
+              >caniuse</Link>
+            </Heading>
+            <Image src={images.caniuse.replace('/', '')} style={{ width: '90%' }} />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              JavaScript 版本相容性 table
+              <Link
+                href="https://kangax.github.io/compat-table/es6/"
+                target="_blank"
+              >版本相容性 table</Link>
+            </Heading>
+            <Image src={images.comptable.replace('/', '')} style={{ width: '90%' }} />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              等到所有 browser 支援<br /> 是不實際的
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              必須編譯 JavaScript<br /> 還有其他理由
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              在網路上傳輸：size 很重要
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  Gzip：可壓縮至原本 30%
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Uglify：可壓縮至原本 50%
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  壓縮後通常會命名為 `.min.js`，例如：`https://fb.me/react-0.13.3.min.js`
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              瀏覽器 socket 數量限制
+            </Heading>
+            <Image src={images.socket.replace('/', '')} style={{ width: '60%' }} />
+            <Text textColor="primary">
+              在 HTTP2 普及之前
+            </Text>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  把檔案串接 (concat) 成一個大檔
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  用多個網域來放 static resource
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={1} textColor="white">
+              Dead Code Elimination
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/dead-code-1.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/dead-code-2.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              Babel
+            </Heading>
+            <Image src={images.babel.replace('/', '')} style={{ width: '90%' }} />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Image src={images.babelIs.replace('/', '')} style={{ width: '90%' }} />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={2} textColor="white">
+              簡單的 setup 步驟
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  安裝 babel-cli, babel-preset-react, babel-preset-latest, babel-plugin-transform-object-rest-spread
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  寫 .babelrc，列出 presets 和 plugins
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  寫對應的 compile npm scripts
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              實際操作
+            </Heading>
+            <Link
+              href="https://github.com/web-seminar/slide-v3/tree/gh-pages/4/demo/babel-setup"
+              target="_blank"
+            >範例</Link>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              React
+            </Heading>
+            <Image src={images.react.replace('/', '')} style={{ width: '60%' }} />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              應用程式狀態
             </Heading>
             <Text textColor="primary">
-              Relational Database Management System，關聯式資料庫
+              應用程式的狀態存在於各個程式片斷中
+            </Text>
+            <Text textColor="primary">
+              而且可能有許多複本存在不同變數中需要同步
             </Text>
           </BgSlide>
+
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
-              主流的種類
+              React 的基本概念
             </Heading>
-            <Image src={images.sqls.replace('/', '')} style={{ width: '80%' }} />
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              許多許多的優點
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  資料處理很穩健
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  會使用的人多，資源多易學
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  歷史悠久，長年效能優化
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  可使用 join 等功能，功能性強
-                </Text>
-              </ListItem>
-            </List>
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              有支援 Transaction 的 ACID 特性
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  原子性 (atomicity)：transaction 中的所有操作，要麼全部完成，要麼全部不完成。發生錯誤，會被 rollback
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  一致性 (consistency)：寫入的資料必須完全符合所有的預設規則，包含資料的精確度等等
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  隔離性 (isolation)：當兩個或者多個 transition 同時進行（查詢或修改）資料庫的同一數據時所表現出的相互關係
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  持久性 (durability)：對資料庫所作的改變持久地保存在資料庫之中
-                </Text>
-              </ListItem>
-            </List>
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Text textColor="primary" lineHeight={1.4}>
-              但是...<br />
-              即便長年下來 SQL 衍伸出很多<br />
-              垂直分割、讀寫分離等等等技術<br />
-              但遇到某些狀況還是不適合用 SQL 處理..<br />
-            </Text>
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              CAP
-            </Heading>
-            <Image src={images.cap.replace('/', '')} style={{ width: '80%' }} />
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              有支援 Transaction 的 ACID 特性
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Consistency 一致性
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Availability 可用性
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Partition tolerance 分區容忍
-                </Text>
-              </ListItem>
-            </List>
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              Wiki
-            </Heading>
-            <Text textColor="primary" lineHeight={1.4}>
-              根據定理，分布式系統只能滿足三項中的兩項而不可能滿足全部三項。理解 CAP 理論的最簡單方式是想像兩個節點分處分區兩側。允許至少一個節點更新狀態會導致數據不一致，即喪失了 C 性質。如果為了保證數據一致性，將分區一側的節點設置為不可用，那麼又喪失了 A 性質。除非兩個節點可以互相通信，才能既保證 C 又保證 A，這又會導致喪失 P 性質。
-            </Text>
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Image src={images.otherCap.replace('/', '')} style={{ width: '90%' }} />
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Image src={images.circle.replace('/', '')} style={{ width: '75%' }} />
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/react-basic.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
           </BgSlide>
 
           <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              NoSQL (Not only SQL)
+            <Heading size={5} lineHeight={2} textColor="white">
+              UI 由一個個的 Component 組合而成
             </Heading>
-            <Text textColor="primary" lineHeight={1.4}>
-              非關係型、分散式、不提供 ACID 的資料庫設計模式
-            </Text>
           </BgSlide>
 
           <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              主要分成
+            <Heading size={5} lineHeight={2} textColor="white">
+              定義 UI 而不要去操作 UI
             </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Document
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Graph
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Key-Value
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Column
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Object
-                </Text>
-              </ListItem>
-            </List>
           </BgSlide>
+
           <BgSlide transition={['slide']}>
-            <Image src={images.nosqlType.replace('/', '')} style={{ width: '65%' }} />
+            <Heading size={3} lineHeight={2} textColor="white">
+              Hello World Component
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              定義一個 React Component
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/react-hello.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={2} textColor="white">
+              把 Component render 到畫面上
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/react-render.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              就這麼簡單
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              JSX
+            </Heading>
           </BgSlide>
 
           <BgSlide transition={['slide']}>
             <Heading size={6} lineHeight={2} textColor="white">
-              NoSQL 世界地圖
+              jsx 是一種 JavaScript 的擴充語法<br />
+              看起來像是 HTML<br />
+              Babel 有支援 jsx 的編譯
             </Heading>
-            <Image src={images.nosqlMap.replace('/', '')} style={{ width: '80%' }} />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/react-element.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
           </BgSlide>
 
           <BgSlide transition={['slide']}>
             <Heading size={6} lineHeight={2} textColor="white">
-              每個功能模組適用的 database 可能都不一樣
+              背後其實是用 `React.createElement` 去作轉換
             </Heading>
-            <Image src={images.map.replace('/', '')} style={{ width: '95%' }} />
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/createElement.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
           </BgSlide>
 
           <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-             資源：
+            <Heading size={6} lineHeight={2} textColor="white">
+              可以用 {'{}'} 傳非固定字串的屬性進去
             </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Mongodb:<Link href="https://university.mongodb.com/" target="_blank">Mongo University</Link>
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Redis:<Link href="http://try.redis.io/" target="_blank">Try Redis</Link>
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Neo4j:<Link href="http://console.neo4j.org/" target="_blank">Neo4j</Link>
-                </Text>
-              </ListItem>
-            </List>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/prop-pass.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
           </BgSlide>
 
           <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-             Relationship
-            </Heading>
-            <Image src={images.table.replace('/', '')} style={{ width: '75%' }} />
-          </BgSlide>
-
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-             One to Many
-            </Heading>
-            <Text textColor="primary">通常會有一個 foreign key 關聯到另一個表的 PK</Text>
-            <Image src={images.oneToMany.replace('/', '')} style={{ width: '75%' }} />
-          </BgSlide>
-
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-             Many to Many
-            </Heading>
-            <Text textColor="primary">中間需要有 Pivot Table 記錄兩邊的 PK</Text>
-            <Image src={images.manyToMany.replace('/', '')} style={{ width: '75%' }} />
-          </BgSlide>
-
-
-          { /* =================================
-            Project
-            ================================= */ }
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              Sequelize
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Migration
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  ORM (Object Relational Mapping)
-                </Text>
-              </ListItem>
-            </List>
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              Use Sequelize
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  $ npm install -g sequelize-cli
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  $ npm install --save sequelize mysql
-                </Text>
-              </ListItem>
-            </List>
-          </BgSlide>
-          <BgSlide transition={['slide']}>
-            <Heading size={4} lineHeight={2} textColor="white">
-              <Link href="https://github.com/sequelize/cli" target="_blank">Migration</Link>
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  $ sequelize migration:create
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  $ sequelize db:migration
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  $ sequelize db:migration:undo
-                </Text>
-              </ListItem>
-            </List>
-          </BgSlide>
-
-          { /* =================================
-            Auth
-            ================================= */ }
-          <BgSlide transition={['slide']}>
-            <Heading size={3} lineHeight={2} textColor="white">
-              Auth
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Authentication
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Authorization
-                </Text>
-              </ListItem>
-            </List>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/className-htmlFor.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
           </BgSlide>
 
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
-              Authentication
+              更詳細可以看
+              <Link
+                href="https://facebook.github.io/react/docs/jsx-in-depth.html"
+                target="_blank"
+              >JSX in Depth</Link>
             </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Users table
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Password Hash
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Cookie & Session
-                </Text>
-              </ListItem>
-            </List>
           </BgSlide>
 
           <BgSlide transition={['slide']}>
             <Heading size={3} lineHeight={2} textColor="white">
-              Password Hash
+              Component render 常見錯誤
             </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  密碼一定要加密
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  不要使用 md5, sha1 等等容易碰撞，而且有
-                  <Link
-                    href="http://project-rainbowcrack.com/table.htm"
-                    target="_blank"
-                  >
-                    Rainbow Table
-                  </Link>的演算法
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  不要使用可逆的加密
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  建議使用 Bcrypt、Script、PBKDF2 其中之一
-                </Text>
-              </ListItem>
-            </List>
           </BgSlide>
 
           <BgSlide transition={['slide']}>
-            <Heading size={3} lineHeight={2} textColor="white">
-              Cookie & Session
+            <Heading size={5} lineHeight={1} textColor="white">
+              錯誤範例：回傳的根 element 只能有一個
             </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Server 可以傳 Set-Cookie Response Header 給 Client
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Client 之後都會帶上 Cookie (by domain)
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  Cookie 裡面可以只存一個 session_id 來辨識
-                </Text>
-              </ListItem>
-            </List>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/comperror-1.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={1} textColor="white">
+              包進一個共同根 element 是比較普遍的做法
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/compsolution-1.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
           </BgSlide>
 
           <BgSlide transition={['slide']}>
-            <Heading size={3} lineHeight={2} textColor="white">
-              Authorization
+            <Heading size={5} lineHeight={1} textColor="white">
+              錯誤範例：用 undefined 去 createElement
             </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  Token
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  JWT (JSON Web Token)
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  OAuth 2
-                </Text>
-              </ListItem>
-            </List>
-          </BgSlide>
-
-          <BgSlide transition={['slide']}>
-            <Heading size={3} lineHeight={2} textColor="white">
-              常見漏洞
-            </Heading>
-            <List>
-              <ListItem>
-                <Text textColor="primary">
-                  XSS (Cross-Site Scripting)
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  CSRF (Cross-Site Request Forgery)
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text textColor="primary">
-                  SQL Injection
-                </Text>
-              </ListItem>
-            </List>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/comperror-2.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
           </BgSlide>
 
           <BgSlide transition={['slide']}>
             <Heading size={4} lineHeight={2} textColor="white">
-              Injection
+              props and state
             </Heading>
-            <Image src={images.mom.replace('/', '')} style={{ width: '100%' }} />
+            <Text textColor="primary">
+              這是初學者最容易有疑惑的地方
+            </Text>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              props
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              可以把 Yo 當做 props 傳下去：
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/prop-yo.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              沒有傳就會用預設值
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/prop-default.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              可以設定 prop 型別檢查，詳細的 propTypes 可以看
+              <Link
+                href="https://facebook.github.io/react/docs/reusable-components.html#prop-validation"
+                target="_blank"
+              >
+                這裡
+              </Link>
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/prop-types.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              包在 element 裡面的東西則會作為 this.props.children 傳下去
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              只依靠 props 決定 UI 的 Component<br />
+              稱為 Stateless Component<br />
+              而且很容易測試<br />
+              大部份的 component 都是這種
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={2} textColor="white">
+              Stateless Functional Component
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/sfc.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              state
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              通常是比較高階的 component 才會有<br />
+              有 state 的 component 被稱為 stateful component
+            </Heading>
+          </BgSlide>
+
+           <BgSlide transition={['slide']}>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/state.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              如果能沒有 state 就不要有 state<br />
+              發現兩個 component 用到同一個 state 就在往上提一層
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              它們相似的地方
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  都是一般 JavaScript 物件
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  都會觸發 UI 更新
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  對 UI 有決定性影響
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              如果 component 需要在某個時間點改變某個屬性<br />
+              才需要是 state<br />
+              大部份時候應該是 props
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              Event System
+            </Heading>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={2} textColor="white">
+              React 使用 SyntheticEvent
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  在 nativeEvent 上封裝來達成跨平台
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  用 Event Delegation
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  用 Event pool
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  都是使用 camelCase
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={2} textColor="white">
+              onSomeEvent...
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/event.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              詳細可以使用的 event 可以看
+              <Link
+                href="https://facebook.github.io/react/docs/events.html"
+                target="_blank"
+              >
+                官方文件
+              </Link>
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              Controlled Components
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/no-value.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/fix-value.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={2} textColor="white">
+              通常的 Controlled Component 手法
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/controlled.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              Think in React
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={6} lineHeight={2} textColor="white">
+              用 component 的角度<br />
+              <Link
+                href="https://facebook.github.io/react/docs/thinking-in-react.html"
+                target="_blank"
+              >
+                官方文件
+              </Link>
+            </Heading>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  Step 1: break the UI into a component hierarchy
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Step 2: Build a static version in React
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Step 3: Identify the minimal (but complete) representation of UI state
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Step 4: Identify where your state should live
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  Step 5: Add inverse data flow
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={2} textColor="white">
+              事情發生的順序大多不重要
+            </Heading>
+            <Text textColor="primary">
+              事件發生 (onClick..) 會去改變資料<br />
+              資料決定 UI 長什麼樣跟事件本身無關
+            </Text>
+          </BgSlide>
+
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              React Devtools
+            </Heading>
+            <Link
+              href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi"
+              target="_blank"
+            >載點</Link>
+          </BgSlide>
+
+          <BgSlide transition={["slide", "spin"]}>
+            <Heading caps size={1} textColor="tertiary">
+              THE END
+            </Heading>
+            <Heading size={4} textColor="white">
+              Thank you for listening!
+            </Heading>
           </BgSlide>
         </Deck>
       </Spectacle>
