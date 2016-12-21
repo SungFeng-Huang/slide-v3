@@ -1,0 +1,15 @@
+// 如果三種 props 來源有撞名，可透過這個 function 決定誰被蓋掉
+
+function mergeProps(stateProps, dispatchProps, parentProps) {
+  return {
+    ...stateProps,
+    ...dispatchProps,
+    ...parentProps, // 這樣就可以讓 parentProps 蓋掉其他兩個
+  }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+    mergeProps
+)(MyDumbComponent)

@@ -37,6 +37,7 @@ require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 
 const images = {
+  reduxMiddleware: require('../assets/redux-middleware.jpg'),
   reactWithoutRedux: require('../assets/react-state-pass.png'),
   reactWithRedux: require('../assets/react-with-redux.png'),
   flux: require('../assets/flux.png'),
@@ -100,7 +101,7 @@ export default class Presentation extends React.Component {
               </ListItem>
               <ListItem>
                 <Text textColor="primary">
-                  Async Action
+                  Middleware
                 </Text>
               </ListItem>
             </List>
@@ -361,6 +362,186 @@ export default class Presentation extends React.Component {
               <ListItem>
                 <Text textColor="primary">
                   connect
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Text textColor="primary">
+              Redux 本身並不依賴特定 View Layer ，這邊介紹 React
+            </Text>
+            <Text textColor="primary">
+              使用 react-redux ，只有兩個API: Provider 和 connect
+            </Text>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={1} textColor="white">
+              Provider
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/provider.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={1} textColor="white">
+              connect
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/connect.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={1} textColor="white">
+              connect - mapStateToProps
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/connect-1.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={1} textColor="white">
+              connect - mapDispatchToProps
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/connect-2.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={1} textColor="white">
+              connect - mergeProps
+            </Heading>
+            <Text textColor="primary">
+              有時候非常好用，可以以後再了解他
+            </Text>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/connect-3.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+
+          {/* Async Action */}
+          <BgSlide transition={['slide']}>
+            <Heading size={3} lineHeight={2} textColor="white">
+              Middlewares
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  Middleware
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  redux-thunk for async
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  redux-logger for dev
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  other middlewares
+                </Text>
+              </ListItem>
+            </List>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Middleware
+            </Heading>
+            <Image src={images.reduxMiddleware.replace('/', '')} style={{ width: '70%' }} />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              Middleware
+            </Heading>
+            <Text textColor="primary">
+              對 dispatch 來的東西（可以不用是 action）動手腳
+            </Text>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={5} lineHeight={1} textColor="white">
+              applyMiddleware
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/apply-middleware.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              redux-thunk for async
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/use-redux-thunk.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              redux-thunk for async
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/dispatch-thunk.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              <a href="http://chentsulin.github.io/redux/docs/advanced/AsyncActions.html">更詳細的介紹</a>
+            </Heading>
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              redux-logger for dev
+            </Heading>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/codes/use-redux-logger.example")}
+              margin="0 20px 0"
+              textSize="0.6em"
+            />
+          </BgSlide>
+          <BgSlide transition={['slide']}>
+            <Heading size={4} lineHeight={2} textColor="white">
+              other middlewares
+            </Heading>
+            <List>
+              <ListItem>
+                <Text textColor="primary">
+                  <a href="https://github.com/gaearon/redux-devtools">redux-devtools</a>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  <a href="https://github.com/acdlite/redux-promise">redux-promise</a>
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text textColor="primary">
+                  <a href="https://github.com/yelouafi/redux-saga">redux-saga</a>: a powerful side effect model
                 </Text>
               </ListItem>
             </List>
